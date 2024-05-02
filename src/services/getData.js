@@ -5,11 +5,10 @@ async function getData() {
      const firestore = new Firestore({
           projectId: "submissionmlgc-rahmatrohmani",
           keyFilename: path.join(__dirname, './keyfile.json'),
-          databaseId: "submission-mlgc"
      });
 
      let data = []
-     const historiesRef = firestore.collection('prediction');
+     const historiesRef = firestore.collection('predictions');
      const histories = await historiesRef.get();
      histories.forEach(doc => {
           data.push({
